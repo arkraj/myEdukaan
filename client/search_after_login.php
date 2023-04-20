@@ -7,12 +7,8 @@ if (!isset($_SESSION['email'])) {
   header("Location: client_login.html");
   exit();
 }
-$conn= new mysqli("localhost","ark","abc123","ecommerce");
-if($conn->connect_error)
-{
-    echo " Error in connecting database";
-    die;
-}
+include('../shared/connection.php');
+
 $email = $_SESSION['email'];
 $sql = "SELECT first_name FROM users WHERE email = '$email'";
 $result = $conn->query($sql);
