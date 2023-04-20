@@ -4,7 +4,8 @@
 $query = $_GET['search_query'];
 
 // Connect to the database
-$conn = mysqli_connect("localhost", "username", "password", "database_name");
+
+include('../shared/connection.php');
 
 // Build the SQL query to search for matching products
 $sql = "SELECT * FROM products WHERE name LIKE '%$query%'";
