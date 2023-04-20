@@ -63,11 +63,7 @@ if($_SESSION['login_status']==false)
   <!--Body-->
 
           <?php
-          $conn = new mysqli("localhost", "ark", "abc123", "ecommerce");
-          if ($conn->connect_error) {
-            echo "Error in connecting database";
-            die;
-          }
+         include('../shared/connection.php');
          
           $vendor = $_SESSION['userdata']['username'];
           
