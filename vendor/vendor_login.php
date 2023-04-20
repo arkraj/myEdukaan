@@ -6,12 +6,7 @@ $upass=$_POST['upass'];
 $phone = $_POST['phone'];
 $hash=md5($upass);
   //establishing connection
-  $conn= new mysqli("localhost","ark","abc123","ecommerce");
-  if($conn->connect_error)
-  {
-      echo " Error in connecting database";
-      die;
-  }
+  include('../shared/connection.php');
   
 $sql_cursor=mysqli_query($conn," SELECT * FROM vendor_user WHERE username='$uname' AND password='$hash' ");
 
