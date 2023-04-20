@@ -81,11 +81,7 @@ if($_SESSION['login_status']==false)
         </thead>
         <tbody>
           <?php
-          $conn = new mysqli("localhost", "ark", "abc123", "ecommerce");
-          if ($conn->connect_error) {
-            echo "Error in connecting database";
-            die;
-          }
+        include('../shared/connection.php');
          
           $vendor = $_SESSION['userdata']['username'];
           $result = mysqli_query($conn, "SELECT * FROM product WHERE vendor='$vendor'");
