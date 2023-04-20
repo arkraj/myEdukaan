@@ -1,10 +1,6 @@
 <?php
 
-$conn = new mysqli("localhost", "ark", "abc123", "ecommerce");
-if ($conn->connect_error) {
-    echo "Error in connecting database";
-    die;
-}
+include('../shared/connection.php');
 
 $search_query = $_POST['search_query'];
 
