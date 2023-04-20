@@ -8,13 +8,9 @@ if(!isset($_SESSION['login_status']) || $_SESSION['login_status'] != 'vendor')
     die;
 }
 
-$conn = new mysqli("localhost", "ark", "abc123", "ecommerce");
+include('../shared/connection.php');
 $vendor=$_SESSION['userdata']['username'];
-if($conn->connect_error)
-{
-    echo "Error in connecting database";
-    die;
-}
+
 
 if(isset($_GET['pid']))
 {
