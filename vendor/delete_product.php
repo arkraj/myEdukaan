@@ -15,12 +15,7 @@ if($_SESSION['login_status']==false)
 
 $pid=$_GET['pid'];
 
-$conn= new mysqli("localhost","ark","abc123","ecommerce");
-if($conn->connect_error)
-{
-    echo " Error in connecting database";
-    die;
-}
+include('../shared/connection.php');
 $status=mysqli_query($conn,"DELETE FROM product WHERE pid='$pid'");
 if($status){
     echo "Deleted successfully";
