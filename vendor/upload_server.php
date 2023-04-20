@@ -19,12 +19,7 @@ $file_name=$prefix_path.$_SESSION['userdata']['username'].date("d-m-Y-H-i-s").$_
 
 move_uploaded_file($_FILES['pdtimg']['tmp_name'],$file_name);    
 
-$conn= new mysqli("localhost","ark","abc123","ecommerce");
-if($conn->connect_error)
-{
-    echo " Error in connecting database";
-    die;
-}
+include('../shared/connection.php');
 
 
 $status=mysqli_query($conn,"insert into product(name,price,description,impath,vendor) values('$name',$price,'$details','$file_name','$vendor')");
