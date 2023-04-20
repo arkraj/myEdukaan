@@ -7,12 +7,7 @@ if (!isset($_SESSION['email'])) {
   header("Location: client_login.html");
   exit();
 }
-$conn= new mysqli("localhost","ark","abc123","ecommerce");
-if($conn->connect_error)
-{
-    echo " Error in connecting database";
-    die;
-}
+include('../shared/connection.php');
 $userid=$_SESSION['userdata']['id'];    
 $pid=$_GET['pid'];
 $cartid=$_GET['cartid'];
